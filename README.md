@@ -7,3 +7,7 @@ This allows you to create your own PODS (Personal Online DataStore) for use in t
 1. Log in to the AWS Console using the Root Account (https://aws.amazon.com/console/)
 1. Create a PODS_User account (NOTE: you should NOT use your Root account to manage your Personal PODS)
     1. Use https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-managing-access-for-an-iam-user as a guide
+    1. Create a new IAM Lightsail Policy
+    1. Create a new IAM Lightsail Group, add the policy to the group
+    1. Create a new IAM Lightsail User, add the user to the group
+1. 
