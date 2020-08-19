@@ -12,3 +12,10 @@ This allows you to create your own PODS (Personal Online DataStore) for use in t
     1. Create a new IAM Lightsail User, add the user to the group
 1. Create a new EC2 instance using Amazon Lightsail
     1. Create a basic Ubuntu Instance
+1. Reserve a Static IP address
+    1. In the AWS Lightsail Console, click on the Networking tab for your PODS
+    1. Click the "Attach Static IP" button
+1. Open up port 443 on the Firewall for HTTPS traffic
+    1. In the AWS Lightsail Console, click on the Networking tab for your PODS
+    1. Under the Firewall section, add a new rule
+        1. HTTPS, TCP, 443, Any IP address
