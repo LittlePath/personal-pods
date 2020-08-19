@@ -26,4 +26,5 @@ This allows you to create your own PODS (Personal Online DataStore) for use in t
     1. Follow these instructions to install/configure Caddy2: 
         1. https://caddyserver.com/docs/install
         1. For the new Caddy user for Ubuntu, see: https://github.com/LittlePath/personal-pods/blob/master/CreateNewUser.md
+        1. Copy this `caddy.service` file to `/etc/systemd/system/caddy.service`: https://github.com/LittlePath/personal-pods/blob/master/caddy.service
     1. Visit https://your.pods.address in a browser to verify that Caddy2 is up and running on port 443. 
