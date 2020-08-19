@@ -19,3 +19,10 @@ This allows you to create your own PODS (Personal Online DataStore) for use in t
     1. In the AWS Lightsail Console, click on the Networking tab for your PODS
     1. Under the Firewall section, add a new rule
         1. HTTPS, TCP, 443, Any IP address
+1. Create DNS "A record" for your static IP address
+    1. A, scott.littlepath.org, 54.212.93.142
+1. Install Caddy2 web server
+    1. https://caddyserver.com/v2
+    1. Follow these instructions to install/configure Caddy2: 
+        1. https://caddyserver.com/docs/install
+    1. Visit https://your.pods.address in a browser to verify that Caddy2 is up and running on port 443. 
