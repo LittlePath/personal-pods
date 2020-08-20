@@ -36,6 +36,7 @@ This allows you to create your own PODS (Personal Online DataStore) for use in t
 
 To create a PODS (Personal Online DataStore)
 1. Configure AWS
+    1. To install the AWS CLI v2 tools, see https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html
     1. Run `aws configure` to set your aws credentials. Your aws user needs to have access to iam and lightstail permissions
 1. Set up python libraries
     1. Create your python virtual env with `virtualenv .venv -p python3`
