@@ -30,3 +30,19 @@ This allows you to create your own PODS (Personal Online DataStore) for use in t
         1. Copy this `Caddyfile` file to `/etc/caddy/Caddyfile` : https://github.com/LittlePath/personal-pods/blob/master/Caddyfile
             1. NOTE: Be sure to change the first line to match your DNS name
     1. Visit https://your.pods.address in a browser to verify that Caddy2 is up and running on port 443. 
+
+
+## Steps to manage PODS using the python script
+
+To create a PODS (Personal Online DataStore)
+1. Configure AWS
+    1. Run `aws configure` to set your aws credentials. Your aws user needs to have access to iam and lightstail permissions
+1. Set up python libraries
+    1. Create your python virtual env with `virtualenv .venv -p python3`
+    1. Start it with `source .venv/bin/activate`
+    1. Install libraries with `pip install -r requirements.txt`
+1. Run `PODS_USER=<preferred-pods-name> python3 create_pods.py`
+    1. You can enter the IP address printed in the `python3 create_pods.py` command output in your browser to see Caddy running
+
+To delete a PODS (Personal Online DataStore) created with the python script above 
+1. Run `PODS_USER=<preferred-pods-name> python3 teardown_pods.py`
