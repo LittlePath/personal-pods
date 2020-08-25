@@ -47,3 +47,12 @@ To create a PODS (Personal Online DataStore)
 
 To delete a PODS (Personal Online DataStore) created with the python script above 
 1. Run `PODS_USER=<preferred-pods-name> python3 teardown_pods.py`
+
+### Possible Issues
+Not enough access - Check your IAM role permissions
+Availability zone not valid - It is currently hardcoded to `'us-east-1a'` and should be parameterized as an argument for the script.
+
+### Remaining Work
+1. After creating a PODS IAM user, switch to using that user for creating the Lightsail instance (we don't want to use a root user for Lightsail for least priviledge reasons)
+2. Automate DNS creation
+3. Automate Caddy setup following the steps in this section 'Steps to create a PODS in Amazon AWS'

@@ -75,23 +75,23 @@ instance = lightsail_client.create_instances(
 
 print('===Create PODS: Created lightsail instance')
 
+print('===Create PODS: !!! Waiting for instance to be in a "Running" state in order to continue provisioning !!!')
+time.sleep(10) #wait for lightsail intance to have status 'Running'. TODO: Implement exponention backoff
+print('===Create PODS: !!! Waiting for instance to be in a "Running" state in order to continue provisioning !!!')
+time.sleep(10) #wait for lightsail intance to have status 'Running'. TODO: Implement exponention backoff
+
 # # set firewall port
 # response = lightsail_client.put_instance_public_ports(
 #     portInfos=[
 #         {
-#             'fromPort': 123,
-#             'toPort': 123,
-#             'protocol': 'tcp'|'all'|'udp'|'icmp',
-#             'cidrs': [
-#                 'string',
-#             ],
-#             'cidrListAliases': [
-#                 'string',
-#             ]
+#             'fromPort': 443,
+#             'protocol': 'tcp',
 #         },
 #     ],
-#     instanceName='string'
+#     instanceName=RESOURCE_NAME
 # )
+# print(f'===Create PODS: Created https firewall')
+
 
 # provision static ip 
 response = lightsail_client.allocate_static_ip(
@@ -100,10 +100,6 @@ response = lightsail_client.allocate_static_ip(
 ip_name = response['operations'][0]['resourceName']
 print(f'===Create PODS: Created static ip: {ip_name}')
 
-print('===Create PODS: !!! Waiting for instance to be in a "Running" state in order to attach the static IP !!!')
-time.sleep(10) #wait for lightsail intance to have status 'Running'. TODO: Implement exponention backoff
-print('===Create PODS: !!! Waiting for instance to be in a "Running" state in order to attach the static IP !!!')
-time.sleep(10) #wait for lightsail intance to have status 'Running'. TODO: Implement exponention backoff
 
 response = lightsail_client.attach_static_ip(
     staticIpName=f'{RESOURCE_NAME}_Static_IP',
